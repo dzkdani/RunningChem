@@ -3,8 +3,12 @@
 public class coin : MonoBehaviour
 {
     Rigidbody2D rb;
+    [SerializeField] private int currentCoin = 0;
+    private const int minCoin = 0;
     public itemsManager ItemDetails;
 
+    void coinCollect(int extraCoin) { currentCoin += extraCoin; }
+    
     void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,6 +26,7 @@ public class coin : MonoBehaviour
     {
         if (other.collider.CompareTag("Player"))
         {
+            soalManager.Instance.addToCount(1);
             ObjectPooler.Instance.ReturnToPool(this.gameObject, ItemDetails.tag);
         }
     }

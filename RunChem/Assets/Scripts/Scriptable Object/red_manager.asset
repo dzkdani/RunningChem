@@ -15,5 +15,5 @@ MonoBehaviour:
   prefab: {fileID: 7714991681705824389, guid: 91fde9bc77a43194f8acb43086361be6, type: 3}
   scrBound: {fileID: 11400000, guid: 58414154341c837438a5e3c5e007fee7, type: 2}
   offset: 1
-  speed: 2
+  speed: 3
   tag: red

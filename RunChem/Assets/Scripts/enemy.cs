@@ -1,10 +1,11 @@
-﻿
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class red : MonoBehaviour
+public class enemy : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] const int extraHealth = 5;
+    [SerializeField] const int enemyDmg = 2;
     public itemsManager ItemDetails;
 
     void OnEnable()
@@ -29,7 +30,7 @@ public class red : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player"))
         {
-            healthBar.Instance.addHealth(extraHealth);
+            healthBar.Instance.takeDamage(enemyDmg);
         }
     }
 }

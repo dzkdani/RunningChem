@@ -21,8 +21,9 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] boundaries scrBound;
     private Vector2 spawnPosition;
     private const float offset = 1;
-
-    IEnumerator coinSpawner, redSpawner, bluSpawner;
+    IEnumerator coinSpawner, enemySpawner;
+    [SerializeField] private bool extraHealthSpwn = false;
+    private bool soalReady = false;
 
     void Start() {
         
@@ -31,29 +32,38 @@ public class ObjectSpawner : MonoBehaviour
             timerDictionary.Add(time.tag, time.timeVal);
         }
 
-        coinSpawner = spawnTimer("coin", timerDictionary["coin"]);
-        redSpawner = spawnTimer("red", timerDictionary["red"]);
-        bluSpawner = spawnTimer("blue", timerDictionary["blue"]);
+        coinSpawner = mainTimer("coin", timerDictionary["coin"]);
+        enemySpawner = mainTimer("enemy", timerDictionary["enemy"]);
 
-        StartCoroutine(coinSpawner);
+        if (gameStart)
+        {
+            StartCoroutine(coinSpawner);
+            StartCoroutine(enemySpawner);
+        }
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        //healthextra
+        if (healthBar.Instance.GetHealth() <= 2)
         {
-            StopAllCoroutines();
-            StartCoroutine(bluSpawner);
+            if (!extraHealthSpwn) {
+                conditionalTimer("red");
+                extraHealthSpwn = true;
+            }
+        } else if (healthBar.Instance.GetHealth() > 2) { extraHealthSpwn = false; }
+
+        //soalpopup
+        if(soalManager.Instance.checkSoal()) {
+            if(!extraHealthSpwn) {
+                conditionalTimer("blue");
+                extraHealthSpwn = true;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            StopAllCoroutines();
-            StartCoroutine(redSpawner);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            StopAllCoroutines();
-            StartCoroutine(coinSpawner);
-        }
+    }
+
+    void conditionalTimer(string tag)
+    {
+        spawnObj(tag);
     }
 
     void spawnObj(string tag) {
@@ -64,9 +74,9 @@ public class ObjectSpawner : MonoBehaviour
         var objectToSpawn = ObjectPooler.Instance.SpawnFromPool(tag, spawnPosition, Quaternion.identity);
     }
 
-    IEnumerator spawnTimer(string tag, int time) {
+    IEnumerator mainTimer(string tag, int time) {
         while(gameStart) {
-            yield return new WaitForSecondsRealtime(time);
+            yield return new WaitForSeconds(time);
             spawnObj(tag);
         }
     }
