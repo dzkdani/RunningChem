@@ -18,12 +18,14 @@ public class ObjectSpawner : MonoBehaviour
     private bool gameStart = true;
     
 
-    [SerializeField] boundaries scrBound;
     private Vector2 spawnPosition;
     private const float offset = 1;
+    private const float minX = -2.2f;
+    private const float maxX = 2.2f;
     IEnumerator coinSpawner, enemySpawner;
-    [SerializeField] private bool extraHealthSpwn = false;
     private bool soalReady = false;
+    [SerializeField] private bool extraHealthSpwn = false;
+    [SerializeField] private bool isSoalPopUp = false;
 
     void Start() {
         
@@ -54,9 +56,9 @@ public class ObjectSpawner : MonoBehaviour
 
         //soalpopup
         if(soalManager.Instance.checkSoal()) {
-            if(!extraHealthSpwn) {
+            if(!isSoalPopUp) {
                 conditionalTimer("blue");
-                extraHealthSpwn = true;
+                isSoalPopUp = true;
             }
         }
     }
@@ -67,9 +69,7 @@ public class ObjectSpawner : MonoBehaviour
     }
 
     void spawnObj(string tag) {
-        spawnPosition = new Vector2 (Random.Range(-scrBound.GetScrBound().x+offset, 
-                                                scrBound.GetScrBound().x-offset) 
-                                                ,scrBound.GetScrBound().y*2);
+        spawnPosition = new Vector2 (Random.Range(minX, maxX), transform.position.y);
 
         var objectToSpawn = ObjectPooler.Instance.SpawnFromPool(tag, spawnPosition, Quaternion.identity);
     }

@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: coin_manager
   m_EditorClassIdentifier: 
   prefab: {fileID: 5462250212681524533, guid: 5ff1911ee0e327841b16fe1a8a6f80e2, type: 3}
-  scrBound: {fileID: 11400000, guid: 58414154341c837438a5e3c5e007fee7, type: 2}
-  offset: 1
-  speed: 3
-  tag: coin
+  spd: 3
+  minY: -6.5

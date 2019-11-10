@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: enemy_manager
   m_EditorClassIdentifier: 
   prefab: {fileID: 2373510309759120589, guid: dfcaaebe8ddd08847be1930424ec1d9d, type: 3}
-  scrBound: {fileID: 11400000, guid: 58414154341c837438a5e3c5e007fee7, type: 2}
-  offset: 1
-  speed: 2
-  tag: enemy
+  spd: 1.75
+  minY: -6.5

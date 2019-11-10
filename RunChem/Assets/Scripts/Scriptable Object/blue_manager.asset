@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: blue_manager
   m_EditorClassIdentifier: 
   prefab: {fileID: 1744440649613451590, guid: 5f1dc06c18346e441814f3c298597f1b, type: 3}
-  scrBound: {fileID: 11400000, guid: 58414154341c837438a5e3c5e007fee7, type: 2}
-  offset: 1
-  speed: 3
-  tag: blue
+  spd: 2
+  minY: -6.5

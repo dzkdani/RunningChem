@@ -6,8 +6,9 @@ using UnityEngine;
 public class soal : ScriptableObject
 {
     public string tag;
+    private const int maxOpsi = 5;
     [TextArea] public string soalText;
-    public string[] opsi = new string[5];
+    public string[] opsi = new string[maxOpsi];
     public int opsiBnr;
     
 }
