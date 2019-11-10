@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ac74f5ae21d0c4bb189cf8b29a99a4, type: 3}
+  m_Name: soal_3
+  m_EditorClassIdentifier: 
+  tag: soallvl1
+  soalText: "Dalam persamaan reaksi:\r\nCN\u2013 + H2O \u2192 HCN + OH\u2013\r\nCN\u2013
+    berlaku sebagai basa, sesuai dengan teori..."
+  opsi:
+  - Arrhenius
+  - Bronsted-Lowry
+  - Lewis
+  - Bronsted-Lowry dan Lewis
+  - Arrhenius, Bronsted-Lowry, dan Lewis
+  opsiBnr: 4

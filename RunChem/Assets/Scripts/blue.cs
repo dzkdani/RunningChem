@@ -24,6 +24,8 @@ public class blue : MonoBehaviour
         {
             ObjectPooler.Instance.ReturnToPool(this.gameObject, ItemDetails.tag);
             Debug.Log("Dhuarr Soal");
+            soalManager.Instance.popUpSoal();
+            Time.timeScale = 0;
         }
     }
 }

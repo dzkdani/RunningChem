@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class soalManager : MonoBehaviour
 {
@@ -8,11 +9,17 @@ public class soalManager : MonoBehaviour
     void Awake() {
         Instance = this;
         DontDestroyOnLoad(Instance);
+
+
+        panelSoal = GameObject.FindGameObjectWithTag("Soal");
+        panelSoal.SetActive(false);
     }
     public void addToCount(int a) { currentCount += a; }
     public int getCount() {return currentCount;}
     public bool checkSoal() {return isSoal;}
+    public void popUpSoal() {panelSoal.SetActive(true);}
 
+    GameObject panelSoal;
     const int soalTriggerCount = 10;
     const int minCount = 0;
     [SerializeField] int currentCount = 0;
@@ -21,7 +28,6 @@ public class soalManager : MonoBehaviour
     void Update() {
         if (currentCount == soalTriggerCount)
         {
-            Debug.Log("Dhuarr Soal");
             isSoal = true;
             currentCount = minCount;
         } else { isSoal = false; }    

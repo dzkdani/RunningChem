@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ac74f5ae21d0c4bb189cf8b29a99a4, type: 3}
+  m_Name: soal_2
+  m_EditorClassIdentifier: 
+  tag: soallvl1
+  soalText: Menurut Bronsted-Lowry pada reaksi manakah H2O sebagai basa ?
+  opsi:
+  - "H2O + H2SO4 \u2194 H3O+ + HSO4-"
+  - "H2O + CO32- \u2194 HCO3- + OH-"
+  - "H2O + CO2 \u2194 H2CO3"
+  - "H2O + NH3 \u2194 NH4+ + OH-"
+  opsiBnr: 1
