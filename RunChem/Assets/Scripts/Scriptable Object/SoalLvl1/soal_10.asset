@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ac74f5ae21d0c4bb189cf8b29a99a4, type: 3}
+  m_Name: soal_10
+  m_EditorClassIdentifier: 
+  tag: soallvl1
+  soalText: "Diketahui beberapa pernyataan berikut:\r\n1. Pelarut yang dimaksud hanya
+    sebatas air\r\n2. Asam adalah spesi yang memberikan proton\r\n3. Basa adalah zat
+    yang menghasilkan ion OH- dalam air\r\n4. Pelarut yang digunakan berupa alkohol\r\n5.
+    Basa adalah spesi yang bertindak sebagai penerima (aseptor) proton\r\nDari pernyataan
+    yang tepat mengenai asam dan basaArrhenius ditunjukkan oleh nomer\r"
+  opsi:
+  - 1 dan 3
+  - 1 dan 5
+  - 2 dan 3
+  - 2 dan 4
+  - 4 dan 5
+  opsiBnr: 1

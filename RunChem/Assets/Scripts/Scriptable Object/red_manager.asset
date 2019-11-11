@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8935bd9e3ed83e243babf09a9e83ae4b, type: 3}
   m_Name: red_manager
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7714991681705824389, guid: 91fde9bc77a43194f8acb43086361be6, type: 3}
-  spd: 3
+  spd: 2
   minY: -6.5
+  tag: red

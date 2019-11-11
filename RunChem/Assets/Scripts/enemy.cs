@@ -5,14 +5,21 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] readonly static string itemTag = "enemy";
-    const int enemyDmg = 2;
+    SpriteRenderer sr;
+    string itemTag;
+    [SerializeField] readonly static int enemyDmg = 2;
     public itemsManager ItemDetails;
+    public List<Sprite> enemyImageList = new List<Sprite>(); 
 
     void OnEnable()
     {
+        itemTag = ItemDetails.tag;
+
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -ItemDetails.spd);
+        
+        sr = GetComponent<SpriteRenderer>();     
+        sr.sprite = enemyImageList[Random.Range(0, enemyImageList.Count)];
     }
 
     void FixedUpdate()

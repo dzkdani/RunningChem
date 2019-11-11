@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8935bd9e3ed83e243babf09a9e83ae4b, type: 3}
   m_Name: coin_manager
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5462250212681524533, guid: 5ff1911ee0e327841b16fe1a8a6f80e2, type: 3}
   spd: 3
   minY: -6.5
+  tag: coin

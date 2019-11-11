@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25ac74f5ae21d0c4bb189cf8b29a99a4, type: 3}
-  m_Name: soal_3
+  m_Name: soal_8
   m_EditorClassIdentifier: 
   tag: soallvl1
-  soalText: "Dalam persamaan reaksi:\r\nCN\u2013 + H2O \u2192 HCN + OH\u2013\r\nCN\u2013
-    berlaku sebagai basa, sesuai dengan teori"
+  soalText: Menurut Bronsted-Lowry pada reaksi manakah H2O sebagai basa ?
   opsi:
-  - Arrhenius
-  - Bronsted-Lowry
-  - Lewis
-  - Bronsted-Lowry dan Lewis
-  - Arrhenius, Bronsted-Lowry, dan Lewis
-  opsiBnr: 4
+  - "H2O + H2SO4 \u2194 H3O++ HSO4-"
+  - "H2O + CO32-\u2194 HCO3- + OH-"
+  - "H2O + CO2 \u2194 H2CO3"
+  - "H2O + NH3\u2194 NH4+ + OH-"
+  - "H2O + HSO4- \u2194 OH- + H2SO4"
+  opsiBnr: 1

@@ -3,11 +3,12 @@
 public class blue : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] readonly static string itemTag = "blue";
+   string itemTag;
     public itemsManager ItemDetails;
 
     void OnEnable()
     {
+        itemTag = ItemDetails.tag;
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -ItemDetails.spd);
     }
@@ -24,9 +25,7 @@ public class blue : MonoBehaviour
         if (other.collider.CompareTag("Player"))
         {
             ObjectPooler.Instance.ReturnToPool(this.gameObject, itemTag);
-            Debug.Log("Dhuarr Soal");
             soalManager.Instance.popUpSoal();
-            Time.timeScale = 0;
         }
     }
 }

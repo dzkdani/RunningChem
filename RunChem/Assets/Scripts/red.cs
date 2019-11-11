@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class red : MonoBehaviour
 {
-    Rigidbody2D rb;
-    [SerializeField] readonly static string itemTag = "red";
-    const int extraHealth = 5;
     public itemsManager ItemDetails;
+    Rigidbody2D rb;
+    [SerializeField] readonly static int extraHealth = 5;
+    string itemTag;
 
     void OnEnable()
     {
+        itemTag = ItemDetails.tag;
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -ItemDetails.spd);
     }
@@ -31,6 +32,7 @@ public class red : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             healthBar.Instance.addHealth(extraHealth);
+            ObjectSpawner.Instance.extraHealthSpwn = false;
         }
     }
 }

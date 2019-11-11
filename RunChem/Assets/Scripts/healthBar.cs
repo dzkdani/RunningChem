@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class healthBar : MonoBehaviour
 {
-    public static healthBar Instance {get; set;}
+    public static healthBar Instance {get; private set;}
     private void Awake() {
         Instance = this;
     }
-    public float GetHealth() {
-        return currHealth;
+    public bool CurrentHealthMin() {
+        return currHealth <= 2;
     }
     public Image healtbarImg;
     private float currHealth;
     private const int maxHealth = 10;
     private const int minHealth = 0;
 
-    private void Start() {
+    void Start() {
         currHealth = maxHealth;
     }
 

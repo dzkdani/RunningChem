@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
+    #region ObjectsPools
     [System.Serializable]
     public struct Pool 
     {
@@ -12,17 +13,21 @@ public class ObjectPooler : MonoBehaviour
     }
     public List<Pool> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary = new Dictionary<string, Queue<GameObject>>();
+    #endregion
 
     #region Singleton
     public static ObjectPooler Instance {get; private set;}
     private void Awake() {
-        Instance = this;    
+        Instance = this; 
+        DontDestroyOnLoad(Instance);
+
+        initPool();   
     }
 
     #endregion
 
-    #region  This work and good
-    void Start() {
+    void initPool()
+    {
         foreach (Pool pool in pools)
         {
             Queue<GameObject> objectQue = new Queue<GameObject>();
@@ -45,18 +50,22 @@ public class ObjectPooler : MonoBehaviour
 
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
 
-        objectToSpawn.SetActive(true);
-        objectToSpawn.transform.position = pos;
-        objectToSpawn.transform.rotation = rot;
+        spawnObject(pos, rot, objectToSpawn);
 
         poolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;
     }
 
+    private static void spawnObject(Vector2 pos, Quaternion rot, GameObject objectToSpawn)
+    {
+        objectToSpawn.SetActive(true);
+        objectToSpawn.transform.position = pos;
+        objectToSpawn.transform.rotation = rot;
+    }
+
     public void ReturnToPool(GameObject obj, string tag) {
         obj.gameObject.SetActive(false);
         poolDictionary[tag].Enqueue(obj);
     }
-    #endregion
 }

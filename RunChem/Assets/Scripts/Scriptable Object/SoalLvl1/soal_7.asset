@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25ac74f5ae21d0c4bb189cf8b29a99a4, type: 3}
-  m_Name: soal_3
+  m_Name: soal_7
   m_EditorClassIdentifier: 
   tag: soallvl1
-  soalText: "Dalam persamaan reaksi:\r\nCN\u2013 + H2O \u2192 HCN + OH\u2013\r\nCN\u2013
-    berlaku sebagai basa, sesuai dengan teori"
+  soalText: Ikatan antara boron trriflurida dengan amonia merupakan ikatan kovalen.
+    Boron trifuorida sebagai asam karena menerima pasangan elektron. Teori tersebut
+    dikemukakan oleh
   opsi:
-  - Arrhenius
-  - Bronsted-Lowry
+  - Lowry
   - Lewis
-  - Bronsted-Lowry dan Lewis
-  - Arrhenius, Bronsted-Lowry, dan Lewis
-  opsiBnr: 4
+  - Dalton
+  - Arrhenius
+  - Bronsted
+  opsiBnr: 2

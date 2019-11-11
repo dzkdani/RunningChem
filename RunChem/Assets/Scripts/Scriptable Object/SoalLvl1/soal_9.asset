@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25ac74f5ae21d0c4bb189cf8b29a99a4, type: 3}
-  m_Name: soal_3
+  m_Name: soal_9
   m_EditorClassIdentifier: 
   tag: soallvl1
-  soalText: "Dalam persamaan reaksi:\r\nCN\u2013 + H2O \u2192 HCN + OH\u2013\r\nCN\u2013
-    berlaku sebagai basa, sesuai dengan teori"
+  soalText: Keistimewaan dari Bronsted-Lowry yaitu dapat menjalaskan
   opsi:
-  - Arrhenius
-  - Bronsted-Lowry
-  - Lewis
-  - Bronsted-Lowry dan Lewis
-  - Arrhenius, Bronsted-Lowry, dan Lewis
+  - Sifat asam basa pada reaksi yang reversibel
+  - Reaksi ionisasi
+  - 'Reaksi asam basa berdasarkan serah terima pasangan elektron '
+  - Reaksi asam basa dengan pelarut air saja
+  - Reaksi asam dengan pelarut air
   opsiBnr: 4

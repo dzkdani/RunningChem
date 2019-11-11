@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8935bd9e3ed83e243babf09a9e83ae4b, type: 3}
   m_Name: enemy_manager
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2373510309759120589, guid: dfcaaebe8ddd08847be1930424ec1d9d, type: 3}
   spd: 1.75
   minY: -6.5
+  tag: enemy

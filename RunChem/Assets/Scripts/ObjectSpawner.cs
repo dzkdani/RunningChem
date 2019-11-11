@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ObjectSpawner : MonoBehaviour
 {
     #region Timer
     [System.Serializable]
-    public class Timer
+    public struct Timer
     {
         public string tag;
         public int timeVal;
@@ -15,20 +16,23 @@ public class ObjectSpawner : MonoBehaviour
     public Dictionary<string, int> timerDictionary = new Dictionary<string, int>();
     #endregion
     
-    private bool gameStart = true;
+    #region Singleton
+    public static ObjectSpawner Instance {get; private set;}
+    private void Awake() {
+        Instance = this;
+        DontDestroyOnLoad(Instance);
+    }
+    #endregion
+
+    bool gameStart = true;
     
-
-    private Vector2 spawnPosition;
-    private const float offset = 1;
-    private const float minX = -2.2f;
-    private const float maxX = 2.2f;
+    [SerializeField] List<float> spawnPositionsX = new List<float>();
+ 
+    public bool extraHealthSpwn = false;
     IEnumerator coinSpawner, enemySpawner;
-    private bool soalReady = false;
-    [SerializeField] private bool extraHealthSpwn = false;
-    [SerializeField] private bool isSoalPopUp = false;
 
-    void Start() {
-        
+    void Start()
+    {
         foreach (Timer time in itemTimer)
         {
             timerDictionary.Add(time.tag, time.timeVal);
@@ -37,6 +41,11 @@ public class ObjectSpawner : MonoBehaviour
         coinSpawner = mainTimer("coin", timerDictionary["coin"]);
         enemySpawner = mainTimer("enemy", timerDictionary["enemy"]);
 
+        mainCoroutineStarter();
+    }
+
+    public void mainCoroutineStarter()
+    {
         if (gameStart)
         {
             StartCoroutine(coinSpawner);
@@ -44,21 +53,30 @@ public class ObjectSpawner : MonoBehaviour
         }
     }
 
-    void Update() {
-        //healthextra
-        if (healthBar.Instance.GetHealth() <= 2)
-        {
-            if (!extraHealthSpwn) {
-                conditionalTimer("red");
-                extraHealthSpwn = true;
-            }
-        } else if (healthBar.Instance.GetHealth() > 2) { extraHealthSpwn = false; }
+    void Update()
+    {
+        extraHealthCheck();
 
-        //soalpopup
-        if(soalManager.Instance.checkSoal()) {
-            if(!isSoalPopUp) {
-                conditionalTimer("blue");
-                isSoalPopUp = true;
+        soalCheck();
+    }
+
+    void soalCheck()
+    {
+        if (soalManager.Instance.checkSoal())
+        {
+            StopAllCoroutines();
+            conditionalTimer("blue");
+        }
+    }
+
+    void extraHealthCheck()
+    {
+        if (healthBar.Instance.CurrentHealthMin())
+        {
+            if(!extraHealthSpwn)
+            {
+                conditionalTimer("red");
+                extraHealthSpwn = true; 
             }
         }
     }
@@ -69,8 +87,8 @@ public class ObjectSpawner : MonoBehaviour
     }
 
     void spawnObj(string tag) {
-        spawnPosition = new Vector2 (Random.Range(minX, maxX), transform.position.y);
-
+        Vector2 spawnPosition = new Vector2 (spawnPositionsX[Random.Range(0, spawnPositionsX.Count)],
+                                    transform.position.y);
         var objectToSpawn = ObjectPooler.Instance.SpawnFromPool(tag, spawnPosition, Quaternion.identity);
     }
 
