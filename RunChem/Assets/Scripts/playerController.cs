@@ -16,9 +16,26 @@ public class playerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        mobileController();
+
         if (Input.GetKeyDown(KeyCode.LeftArrow)) { moveCharacter(moveDirection.Left); }
         if (Input.GetKeyDown(KeyCode.RightArrow)) { moveCharacter(moveDirection.Right); }
+
         clampCharacter();
+    }
+
+    void mobileController()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPos.z = 0f;
+
+            if (touchPos.x <= -0.05f) { moveCharacter(moveDirection.Left); }
+            if (touchPos.x >= -0.05f) { moveCharacter(moveDirection.Right); }
+
+        }
     }
 
     void clampCharacter()
