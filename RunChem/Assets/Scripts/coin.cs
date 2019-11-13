@@ -24,12 +24,17 @@ public class coin : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other) 
-    {
-        if (other.collider.CompareTag("Player"))
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Player"))
         {
-            soalManager.Instance.addToCount(1);
             ObjectPooler.Instance.ReturnToPool(this.gameObject, itemTag);
+        }    
+    }
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag("Player"))
+        {
+            //nambah coin
+            soalManager.Instance.addToCount(1);
         }
     }
 }

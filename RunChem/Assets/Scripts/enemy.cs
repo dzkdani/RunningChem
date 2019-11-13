@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
     Rigidbody2D rb;
-    SpriteRenderer sr;
+    Animator anim;
     string itemTag;
     [SerializeField] readonly static int enemyDmg = 2;
     public itemsManager ItemDetails;
-    public List<Sprite> enemyImageList = new List<Sprite>(); 
 
     void OnEnable()
     {
@@ -17,9 +14,11 @@ public class enemy : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -ItemDetails.spd);
-        
-        sr = GetComponent<SpriteRenderer>();     
-        sr.sprite = enemyImageList[Random.Range(0, enemyImageList.Count)];
+
+        anim = GetComponent<Animator>();
+    }
+    void Start() {
+        anim.SetFloat("randAnim",Random.Range(0.0f, 2.0f));
     }
 
     void FixedUpdate()

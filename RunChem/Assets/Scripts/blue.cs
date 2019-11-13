@@ -3,7 +3,7 @@
 public class blue : MonoBehaviour
 {
     Rigidbody2D rb;
-   string itemTag;
+    string itemTag;
     public itemsManager ItemDetails;
 
     void OnEnable()

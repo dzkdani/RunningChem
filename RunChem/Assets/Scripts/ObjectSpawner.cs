@@ -57,16 +57,16 @@ public class ObjectSpawner : MonoBehaviour
     {
         extraHealthCheck();
 
-        soalCheck();
+        soalReadyCheck();
     }
 
-    void soalCheck()
+    void soalReadyCheck()
     {
-        if (soalManager.Instance.checkSoal())
+        if (soalManager.Instance.isPopUpSoal())
         {
             StopAllCoroutines();
             conditionalTimer("blue");
-        }
+        } 
     }
 
     void extraHealthCheck()
@@ -81,15 +81,34 @@ public class ObjectSpawner : MonoBehaviour
         }
     }
 
-    void conditionalTimer(string tag)
+    public void opsiJawabanTimer(string tag)
     {
-        spawnObj(tag);
+        spawnOpsiJwbn(tag);
     }
 
-    void spawnObj(string tag) {
+    
+    int i;
+    public int getIteration() {return i;}
+
+    void spawnOpsiJwbn(string tag)
+    {
+        for (i = 0; i < spawnPositionsX.Count; i++)
+        {
+            var objToSpwn = ObjectPooler.Instance.SpawnFromPool(tag, new Vector2(spawnPositionsX[i], transform.position.y)
+                            , Quaternion.identity);
+        }
+    }
+
+    void spawnObj(string tag) 
+    {
         Vector2 spawnPosition = new Vector2 (spawnPositionsX[Random.Range(0, spawnPositionsX.Count)],
                                     transform.position.y);
         var objectToSpawn = ObjectPooler.Instance.SpawnFromPool(tag, spawnPosition, Quaternion.identity);
+    }
+
+    void conditionalTimer(string tag)
+    {
+        spawnObj(tag);
     }
 
     IEnumerator mainTimer(string tag, int time) {

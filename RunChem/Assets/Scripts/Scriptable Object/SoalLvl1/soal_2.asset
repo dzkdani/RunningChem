@@ -19,4 +19,5 @@ MonoBehaviour:
   - "H2O + CO32- \u2194 HCO3- + OH-"
   - "H2O + CO2 \u2194 H2CO3"
   - "H2O + NH3 \u2194 NH4+ + OH-"
+  - "H2O + HSO4- \u2194 OH- + H2SO4"
   opsiBnr: 1
