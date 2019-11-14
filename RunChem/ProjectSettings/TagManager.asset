@@ -7,6 +7,8 @@ TagManager:
   - Soal
   - Emoji
   - opsi
+  - coinText
+  - Coin
   layers:
   - Default
   - TransparentFX

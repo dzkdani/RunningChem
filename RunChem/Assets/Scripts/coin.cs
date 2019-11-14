@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TMPro;
 
 public class coin : MonoBehaviour
 {
@@ -7,11 +8,11 @@ public class coin : MonoBehaviour
     private const int minCoin = 0;
     int currentCoin = 0;
     public itemsManager ItemDetails;
-
+    
     void coinCollect(int extraCoin) { currentCoin += extraCoin; }
     
     void OnEnable()
-    {
+    {    
         itemTag = ItemDetails.tag;
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -ItemDetails.spd);
@@ -28,12 +29,15 @@ public class coin : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             ObjectPooler.Instance.ReturnToPool(this.gameObject, itemTag);
+            if (soalManager.Instance.isPopUpSoal())
+            {
+                ObjectPooler.Instance.ReturnToPool(GameObject.FindGameObjectWithTag("Coin"), itemTag);           
+            }            
         }    
     }
     private void OnTriggerExit2D(Collider2D other) {
         if (other.CompareTag("Player"))
         {
-            //nambah coin
             soalManager.Instance.addToCount(1);
         }
     }

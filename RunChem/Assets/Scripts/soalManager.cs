@@ -9,7 +9,11 @@ public class soalManager : MonoBehaviour
     public static soalManager Instance {get; private set;}
     public TextMeshProUGUI soalText;
     public List<TextMeshProUGUI> opsiText = new List<TextMeshProUGUI>();
+    public TextMeshProUGUI soalTextUI;
+    public TextMeshProUGUI coinCounterUI;
+
     GameObject panelSoal;
+
     void Awake()
     {
         Instance = this;
@@ -23,6 +27,8 @@ public class soalManager : MonoBehaviour
         soalLeft = totalSoal;
         panelSoal = GameObject.FindGameObjectWithTag("Soal");
         panelSoal.SetActive(false);
+        soalTextUI.SetText((totalSoal-soalLeft)+"/"+totalSoal);
+        coinCounterUI.SetText("0");
     }
 
     public void addToCount(int a) { currentCount += a; }
@@ -31,13 +37,13 @@ public class soalManager : MonoBehaviour
     public void popUpSoal() {SoalPanel();}
     public bool isSoalEnd() {return soalLeft == 0;}
 
-    const int soalTriggerCount = 10;
-    const int minCount = 0;
+    readonly int soalTriggerCount = 10;
+    readonly int minCount = 0;
     int currentCount = 0;
     static int totalSoal;
     [SerializeField] int soalLeft;
     [SerializeField] bool isSoal = false;
-    [SerializeField] int tempJawabanBenar;
+    [SerializeField] int jawabanBenar;
     [SerializeField] List<soal> soalList = new List<soal>();
 
     void Update() {
@@ -45,7 +51,8 @@ public class soalManager : MonoBehaviour
         {
             isSoal = true;
             currentCount = minCount;
-        } else { isSoal = false; }    
+        } else { isSoal = false; }
+        coinCounterUI.SetText(currentCount.ToString());    
     }
 
     void SoalPanel()
@@ -58,12 +65,13 @@ public class soalManager : MonoBehaviour
             opsiText[i].SetText(soalList[rand].opsi[i]);
         }
 
-        tempJawabanBenar = soalList[rand].opsiBnr;
+        jawabanBenar = soalList[rand].opsiBnr;
 
         StartCoroutine(opsiJawaban());
         
         soalList.RemoveAt(rand);
         soalLeft = soalList.Count;
+        soalTextUI.SetText((totalSoal-soalLeft)+"/"+totalSoal);
     }
 
     public float popUpDuration;
@@ -85,10 +93,14 @@ public class soalManager : MonoBehaviour
     public void chekJawaban(int jwb)
     {
         
-        if (jwb == tempJawabanBenar)
+        if (jwb == jawabanBenar)
         {
             emojiImg.sprite = emojiList[0];
-        } else { emojiImg.sprite = emojiList[1]; } 
+        } else { 
+            emojiImg.sprite = emojiList[1];
+            healthBar.Instance.takeDamage(2); 
+        }
+         
         emojiImg.color = new Color(emojiImg.color.r, emojiImg.color.g, emojiImg.color.b, 255);
 
         StartCoroutine(endSoal());
@@ -108,7 +120,6 @@ public class soalManager : MonoBehaviour
             isSoal = false;
             StopAllCoroutines();
             ObjectSpawner.Instance.StopAllCoroutines();
-            Debug.Log("DHUARR SELESAI");
         }
     }
 }

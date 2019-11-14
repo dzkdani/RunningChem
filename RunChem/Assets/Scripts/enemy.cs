@@ -5,7 +5,7 @@ public class enemy : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
     string itemTag;
-    [SerializeField] readonly static int enemyDmg = 2;
+    [SerializeField] readonly static int enemyDmg = 1;
     public itemsManager ItemDetails;
 
     void OnEnable()
