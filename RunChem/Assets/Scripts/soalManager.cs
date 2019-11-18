@@ -120,6 +120,7 @@ public class soalManager : MonoBehaviour
             isSoal = false;
             StopAllCoroutines();
             ObjectSpawner.Instance.StopAllCoroutines();
+            Debug.Log("Gim Selesai");
         }
     }
 }

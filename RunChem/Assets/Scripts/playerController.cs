@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    [SerializeField] bool isGUI = false;
     Rigidbody2D rb;
     const float offset = 2.2f;
     const float translateValueX = 1.1f;
@@ -57,8 +56,8 @@ public class playerController : MonoBehaviour
             Vector3 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
             touchPos.z = 0f;
 
-            if (touchPos.x <= -0.05f) { moveCharacter(moveDirection.Left); }
-            if (touchPos.x >= -0.05f) { moveCharacter(moveDirection.Right); }
+            if (touchPos.x < transform.position.x) { moveCharacter(moveDirection.Left); }
+            if (touchPos.x > transform.position.x) { moveCharacter(moveDirection.Right); }
 
         }
     }
