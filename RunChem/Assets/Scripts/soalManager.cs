@@ -67,7 +67,7 @@ public class soalManager : MonoBehaviour
 
         jawabanBenar = soalList[rand].opsiBnr;
 
-        StartCoroutine(opsiJawaban());
+        StartCoroutine(SoalPopUpTimer());
         
         soalList.RemoveAt(rand);
         soalLeft = soalList.Count;
@@ -77,12 +77,18 @@ public class soalManager : MonoBehaviour
     public float popUpDuration;
     public float cekJawabanDuration;
 
-    IEnumerator opsiJawaban()
+    public void okLanjut()
+    {
+        StopCoroutine(SoalPopUpTimer());
+        panelSoal.SetActive(false);
+        ObjectSpawner.Instance.opsiJawabanTimer("opsi");
+    }
+
+    IEnumerator SoalPopUpTimer()
     {
         yield return new WaitForSecondsRealtime(popUpDuration);
-
+        
         panelSoal.SetActive(false);
-
         ObjectSpawner.Instance.opsiJawabanTimer("opsi");
     }
 
@@ -96,12 +102,14 @@ public class soalManager : MonoBehaviour
         if (jwb == jawabanBenar)
         {
             emojiImg.sprite = emojiList[0];
+            audioManager.Instance.PlayAudio("jawabanBnr");
         } else { 
             emojiImg.sprite = emojiList[1];
-            healthBar.Instance.takeDamage(2); 
+            healthBar.Instance.takeDamage(3);
+            audioManager.Instance.PlayAudio("jawabanSlh"); 
         }
-         
         emojiImg.color = new Color(emojiImg.color.r, emojiImg.color.g, emojiImg.color.b, 255);
+         
 
         StartCoroutine(endSoal());
     }

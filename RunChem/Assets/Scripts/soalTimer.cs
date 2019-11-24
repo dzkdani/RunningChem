@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class soalTimer : MonoBehaviour
 {
     public Image timerImg;
-    float maxTime = 10.5f;
-    float minTime = 0f;
-    [SerializeField] float currentTime;
+    public float maxTime;
+    const float minTime = 0f;
+    float currentTime;
 
     void OnEnable() 
     {

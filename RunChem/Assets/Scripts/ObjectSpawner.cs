@@ -29,7 +29,7 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] List<float> spawnPositionsX = new List<float>();
  
     public bool extraHealthSpwn = false;
-    IEnumerator coinSpawner, enemySpawner;
+    IEnumerator coinSpawner, enemySpawner, redSpawner;
 
     void Start()
     {
@@ -40,6 +40,7 @@ public class ObjectSpawner : MonoBehaviour
 
         coinSpawner = mainTimer("coin", timerDictionary["coin"]);
         enemySpawner = mainTimer("enemy", timerDictionary["enemy"]);
+        redSpawner = mainTimer("red",timerDictionary["red"]);
 
         mainCoroutineStarter();
     }
@@ -50,6 +51,7 @@ public class ObjectSpawner : MonoBehaviour
         {
             StartCoroutine(coinSpawner);
             StartCoroutine(enemySpawner);
+            StartCoroutine(redSpawner);
         }
     }
 

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using TMPro;
+using UnityEngine.Audio;
 
 public class coin : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class coin : MonoBehaviour
     private const int minCoin = 0;
     int currentCoin = 0;
     public itemsManager ItemDetails;
-    
+  
     void coinCollect(int extraCoin) { currentCoin += extraCoin; }
     
     void OnEnable()
@@ -25,9 +25,11 @@ public class coin : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerEnter2D(Collider2D other) {     
+
         if (other.CompareTag("Player"))
         {
+            audioManager.Instance.PlayAudio("coin");
             ObjectPooler.Instance.ReturnToPool(this.gameObject, itemTag);
             if (soalManager.Instance.isPopUpSoal())
             {

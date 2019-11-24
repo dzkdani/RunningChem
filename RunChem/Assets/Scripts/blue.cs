@@ -24,6 +24,7 @@ public class blue : MonoBehaviour
     {
         if (other.collider.CompareTag("Player"))
         {
+            audioManager.Instance.PlayAudio("elenmeyer");
             ObjectPooler.Instance.ReturnToPool(this.gameObject, itemTag);
             soalManager.Instance.popUpSoal();
         }

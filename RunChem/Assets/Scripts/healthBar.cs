@@ -29,6 +29,12 @@ public class healthBar : MonoBehaviour
 
     public void addHealth(int extraHealth) {
         currHealth += extraHealth;
+
+        if(currHealth > maxHealth)
+        {
+            currHealth = maxHealth;
+        }
+        
         healtbarImg.fillAmount = currHealth / maxHealth;
     }
 
