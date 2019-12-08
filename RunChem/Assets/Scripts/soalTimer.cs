@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class soalTimer : MonoBehaviour
 {
     public Image timerImg;
-    public float maxTime;
+    [SerializeField] float maxTime;
     const float minTime = 0f;
     float currentTime;
 
     void OnEnable() 
     {
+        //maxTime  = soalManager.Instance.getPopUpDuration();
         currentTime = maxTime;
         timerImg.fillAmount = maxTime / maxTime;
     }

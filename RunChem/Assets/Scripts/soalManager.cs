@@ -37,8 +37,8 @@ public class soalManager : MonoBehaviour
     public void popUpSoal() {SoalPanel();}
     public bool isSoalEnd() {return soalLeft == 0;}
 
-    readonly int soalTriggerCount = 10;
     readonly int minCount = 0;
+    int soalTriggerCount = 10;
     int currentCount = 0;
     static int totalSoal;
     [SerializeField] int soalLeft;
@@ -47,12 +47,12 @@ public class soalManager : MonoBehaviour
     [SerializeField] List<soal> soalList = new List<soal>();
 
     void Update() {
+        coinCounterUI.SetText(currentCount.ToString());    
         if (currentCount == soalTriggerCount && soalLeft > 0)
         {
             isSoal = true;
-            currentCount = minCount;
+            soalTriggerCount += 10;
         } else { isSoal = false; }
-        coinCounterUI.SetText(currentCount.ToString());    
     }
 
     void SoalPanel()
@@ -74,43 +74,46 @@ public class soalManager : MonoBehaviour
         soalTextUI.SetText((totalSoal-soalLeft)+"/"+totalSoal);
     }
 
-    public float popUpDuration;
+    [SerializeField] float popUpDuration;
+    public float getPopUpDuration() { return popUpDuration; }
     public float cekJawabanDuration;
 
     public void okLanjut()
     {
         StopCoroutine(SoalPopUpTimer());
-        panelSoal.SetActive(false);
         ObjectSpawner.Instance.opsiJawabanTimer("opsi");
+        panelSoal.SetActive(false);
     }
 
     IEnumerator SoalPopUpTimer()
     {
-        yield return new WaitForSecondsRealtime(popUpDuration);
-        
-        panelSoal.SetActive(false);
-        ObjectSpawner.Instance.opsiJawabanTimer("opsi");
+        yield return new WaitForSeconds(popUpDuration);
     }
 
     public Image emojiImg;
     GameObject panelEmoji;
     [SerializeField] List<Sprite> emojiList = new List<Sprite>();
-
+    const int DAMAGE_SOAL = 4;
+    const int SKOR_JWBN = 10;
+    int currentSkor = 0;
+    public TextMeshProUGUI skorTextUI;
     public void chekJawaban(int jwb)
-    {
-        
+    {   
         if (jwb == jawabanBenar)
         {
+            currentSkor+=SKOR_JWBN;
             emojiImg.sprite = emojiList[0];
             audioManager.Instance.PlayAudio("jawabanBnr");
+            skorTextUI.SetText(currentSkor.ToString());
+
         } else { 
             emojiImg.sprite = emojiList[1];
-            healthBar.Instance.takeDamage(3);
+            healthBar.Instance.takeDamage(DAMAGE_SOAL);
             audioManager.Instance.PlayAudio("jawabanSlh"); 
         }
+
         emojiImg.color = new Color(emojiImg.color.r, emojiImg.color.g, emojiImg.color.b, 255);
          
-
         StartCoroutine(endSoal());
     }
 
