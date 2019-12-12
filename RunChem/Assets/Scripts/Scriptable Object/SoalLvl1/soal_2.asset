@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: soal_2
   m_EditorClassIdentifier: 
   tag: soallvl1
-  soalText: Menurut Bronsted-Lowry pada reaksi manakah H2O sebagai basa ?
+  soalText: Menurut Bronsted-Lowry pada reaksi manakah H<sub>2</sub>O sebagai basa....
   opsi:
-  - "H2O + H2SO4 \u2194 H3O+ + HSO4-"
-  - "H2O + CO32- \u2194 HCO3- + OH-"
-  - "H2O + CO2 \u2194 H2CO3"
-  - "H2O + NH3 \u2194 NH4+ + OH-"
-  - "H2O + HSO4- \u2194 OH- + H2SO4"
+  - "H<sub>2</sub>O + H<sub>2</sub>SO<sub>4</sub> \u2194 H<sub>3</sub>O+ + HSO<sub>4</sub><sup>-</sup>"
+  - "H<sub>2</sub>O + CO<sub>3</sub><sub>2</sub><sup>-</sup> \u2194 HCO<sub>3</sub><sup>-</sup>
+    + OH<sup>-</sup>"
+  - "H<sub>2</sub>O + CO<sub>2</sub> \u2194 H<sub>2</sub>CO<sub>3</sub>"
+  - "H<sub>2</sub>O + NH<sub>3</sub> \u2194 NH<sub>4</sub><sub>-</sub> + OH<sup>-</sup>"
+  - "H<sub>2</sub>O + HSO<sub>4</sub><sup>-</sup> \u2194 OH<sup>-</sup> + H<sub>2</sub>SO<sub>4</sub>"
   opsiBnr: 1

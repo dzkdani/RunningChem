@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: soal_5
   m_EditorClassIdentifier: 
   tag: soallvl1
-  soalText: Menurut Arrhenius H2O bersifat netral karena
+  soalText: Menurut Arrhenius H<sub>2</sub>O bersifat netral karena....
   opsi:
   - Bersifat nonpolar
-  - H2O tidak berwarna
+  - H<sub>2</sub>O tidak berwarna
   - Merupakan pelarut universal
-  - Molekul H2O tidak mudah terurai
-  - Menghasilkan ion H+ dan OH- yang sama banyak.
+  - Molekul H<sub>2</sub>O tidak mudah terurai
+  - Menghasilkan ion H<sup>+</sup> dan OH<sup>-</sup> yang sama banyak.
   opsiBnr: 5

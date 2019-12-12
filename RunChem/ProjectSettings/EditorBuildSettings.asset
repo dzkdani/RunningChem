@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 6127a36ae75f62c4ca974a192f675f3d
   - enabled: 1
+    path: Assets/Scenes/Komik.unity
+    guid: a10d7d72d45c5944ea165a58ea371de1
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

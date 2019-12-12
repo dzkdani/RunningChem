@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: soal_1
   m_EditorClassIdentifier: 
   tag: soallvl1
-  soalText: Senyawa yang mendonorkan proton adalah ?
+  soalText: Senyawa yang mendonorkan proton adalah....
   opsi:
   - Asal Lewis
   - Asam Bronsted-Lowry

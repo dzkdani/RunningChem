@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: soal_4
   m_EditorClassIdentifier: 
   tag: soallvl1
-  soalText: "Pada larutan NH3 terjadi Kesetimbangan sebagai berikut: \r\nNH3(aq) +
-    H2O(l) \u2194 NH4+(aq) + OH\u2013(aq)\r\nyang merupakan asam basa konjugasi adalah\r"
+  soalText: "Pada larutan NH3 terjadi Kesetimbangan sebagai berikut: \r\nNH<sub>3</sub>(aq)
+    + H<sub>2</sub>O(l) \u2194 NH<sub>4</sub><sup>+</sup>(aq) + OH<sup>-</sup>(aq)\r\nyang
+    merupakan asam basa konjugasi adalah...."
   opsi:
-  - NH3 dan H2O
-  - NH4 dan OH-
-  - NH3 dan OH-
-  - H2O dan NH4+
-  - H2O dan OH-
+  - NH<sub>3</sub> dan H<sub>2</sub>O
+  - NH<sub>4</sub> dan OH<sup>-</sup>
+  - NH<sub>3</sub> dan OH<sup>-</sup>
+  - H<sub>2</sub>O dan NH<sub>4</sub><sup>+</sup>
+  - H<sub>2</sub>O dan OH<sup>-</sup>
   opsiBnr: 5

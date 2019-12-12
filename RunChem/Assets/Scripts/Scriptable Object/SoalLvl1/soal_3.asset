@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: soal_3
   m_EditorClassIdentifier: 
   tag: soallvl1
-  soalText: "Dalam persamaan reaksi:\r\nCN\u2013 + H2O \u2192 HCN + OH\u2013\r\nCN\u2013
-    berlaku sebagai basa, sesuai dengan teori"
+  soalText: "Dalam persamaan reaksi:\r/n\nCN<sup>-</sup> + H<sub>2</sub>O \u2192 HCN
+    + OH\r<sup>-</sup>/n\nCN<sup>-</sup> berlaku sebagai basa, sesuai dengan teori...."
   opsi:
   - Arrhenius
   - Bronsted-Lowry

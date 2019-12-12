@@ -54,6 +54,13 @@ public class buttonController : MonoBehaviour
         }
     }
 
+    public void goToDialogue()
+    {
+        playAudio();
+        StartCoroutine(delayButton());
+        SceneManager.LoadScene("Komik");
+        
+    }
 
     public void goToLvl(int lvl)
    {

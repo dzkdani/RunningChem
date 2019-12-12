@@ -47,7 +47,7 @@ public class soalManager : MonoBehaviour
     [SerializeField] List<soal> soalList = new List<soal>();
 
     void Update() {
-        coinCounterUI.SetText(currentCount.ToString());    
+        coinCounterUI.SetText("<b>"+currentCount.ToString()+"</b>");    
         if (currentCount == soalTriggerCount && soalLeft > 0)
         {
             isSoal = true;
@@ -71,7 +71,7 @@ public class soalManager : MonoBehaviour
         
         soalList.RemoveAt(rand);
         soalLeft = soalList.Count;
-        soalTextUI.SetText((totalSoal-soalLeft)+"/"+totalSoal);
+        soalTextUI.SetText("<b>"+(totalSoal-soalLeft)+"/"+totalSoal+"</b>");
     }
 
     [SerializeField] float popUpDuration;
@@ -104,7 +104,7 @@ public class soalManager : MonoBehaviour
             currentSkor+=SKOR_JWBN;
             emojiImg.sprite = emojiList[0];
             audioManager.Instance.PlayAudio("jawabanBnr");
-            skorTextUI.SetText(currentSkor.ToString());
+            skorTextUI.SetText("<b>"+currentSkor.ToString()+"</b>");
 
         } else { 
             emojiImg.sprite = emojiList[1];

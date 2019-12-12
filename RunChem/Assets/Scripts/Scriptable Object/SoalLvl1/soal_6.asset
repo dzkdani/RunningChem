@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: soal_6
   m_EditorClassIdentifier: 
   tag: soallvl1
-  soalText: 'Asam basa dari reaksi berikut yang tidak dapat dijelaskan dengan teori
-    Arrhenius adalah '
+  soalText: Asam basa dari reaksi berikut yang tidak dapat dijelaskan dengan teori
+    Arrhenius adalah....
   opsi:
-  - "HNO2 \u2192 H+ + NO2-"
-  - "HCl + KOH \u2192 KCl + H2O"
-  - "NaOH \u2192 Na+ + OH-"
-  - "Ca(OH)2 \u2192 Ca2+  + 2OH-"
-  - "H3PO4 \u2192 3H+ + PO43-"
+  - "HNO<sub>2</sub> \u2192 H<sup>+</sup> + NO<sub>2</sub><sup>-</sup>"
+  - "HCl + KOH \u2192 KCl + H<sub>2</sub>O"
+  - "NaOH \u2192 Na+ + OH<sup>-</sup>"
+  - "Ca(OH)<sub>2</sub> \u2192 Ca<sub>2</sub><sup>+</sup>  + 2OH<sup>-</sup>"
+  - "H<sub>3</sub>PO<sub>4</sub> \u2192 3H<sup>+</sup> + PO<sub>4</sub><sup>3-</sup>"
   opsiBnr: 2

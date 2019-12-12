@@ -442,12 +442,14 @@ MonoBehaviour:
   - {fileID: 764418743}
   panelMateri: {fileID: 1597091491}
   kompetensi:
-  - "- 3.10.1\r\nMenjelaskan konsep asam basa menurut Arrhenius\r\n- 3.10.2\r\nMenjelaskan
-    konsep asam basa menurut Bronsted-Lowry\r\n- 3.10.3\r\nMenjelaskan konsep asam
-    basa menurut Lewis"
-  - "- 3.10.4 \r\nMenjelaskan konsep pH\r\n- 3.10.5 \r\nMenentukan pH larutan asam
-    kuat\r\n- 3.10.6\r\nMenentukan pH larutan basa kuat"
-  - "\r- 3.10.7\r\nMengidentifikasi sifat & pH larutan asam basa dengan berbagai indikator"
+  - "- 3.10.1\r\n   <indent=5%>Menjelaskan konsep asam basa menurut Arrhenius\r</indent>\n-
+    3.10.2\r\n   <indent=5%>Menjelaskan konsep asam basa menurut Bronsted-Lowry\r</indent>\n-
+    3.10.3\r\n   <indent=5%>Menjelaskan konsep asam basa menurut Lewis</indent>"
+  - "- 3.10.4 \r\n  <indent=5%>Menjelaskan konsep pH\r</indent>\n- 3.10.5 \r\n  <indent=5%>Menentukan
+    pH larutan asam kuat</indent>\r\n- 3.10.6\r\n  <indent=5%>Menentukan pH larutan
+    basa kuat</indent>"
+  - "\r- 3.10.7\r\n  <indent=5%>Mengidentifikasi sifat & pH larutan asam basa dengan
+    berbagai indikator</indent>"
   kompetensiText: {fileID: 1579509863}
   lvl_UInav: {fileID: 1795083930}
   panelRule: {fileID: 1203750665}
@@ -458,39 +460,32 @@ MonoBehaviour:
   - {fileID: 1694560539}
   rules:
   - tag: kendali
-    ruleText: '1. Sentuh layar pada bagian kanan karakter untuk berpindah jalur ke
-      kanan
-
-      2. Sentuh layar pada bagian kiri karakter untuk berpindah jalur ke kiri'
+    ruleText: "1. <indent=5%>Sentuh layar pada bagian kanan karakter untuk berpindah
+      jalur ke kanan</indent>\r\n\r\n2. <indent=5%>Sentuh layar pada bagian kiri karakter
+      untuk berpindah jalur ke kiri</indent>"
     imgRule:
     - {fileID: 21300000, guid: f2714384353124a4ba9e02797da1c075, type: 3}
     - {fileID: 21300000, guid: 2a8bc4d991efa05479639502b939a6b5, type: 3}
   - tag: item
-    ruleText: '1. Kumpulkan coin hingga 10 untuk dapat  mengeluarkan soal
-
-      2. Hindari musuh, jangan sampai darah habis'
+    ruleText: "1. <indent=5%>Kumpulkan coin hingga 10 untuk dapat  mengeluarkan soal</indent>\r\n\r\n2.
+      <indent=5%>Hindari musuh, jangan sampai darah habis</indent>"
     imgRule:
     - {fileID: 21300000, guid: 1df2775143e433945a59703dee5e2f28, type: 3}
     - {fileID: 21300000, guid: 8d44e56af2e10e147b0542eb9192f96a, type: 3}
   - tag: elenmeyer
-    ruleText: '1. Elenmeyer Merah untuk menambah darah
-
-      2. Elenmeyer Biru akan muncul ketika sudah mendapat 10 coin dan akan memunculkan
-      soal'
+    ruleText: "1. <indent=5%> Elenmeyer Merah untuk menambah darah</indent>\r\n\r\n2.
+      <indent=5%> Elenmeyer Biru akan muncul ketika sudah mendapat 10 coin dan akan
+      memunculkan soal</indent>"
     imgRule:
     - {fileID: 21300000, guid: f5df6c7cacaec5349a7ca591e421caac, type: 3}
     - {fileID: 21300000, guid: ec4a6ad4082392b4c884b55d2b844afb, type: 3}
   - tag: soal
-    ruleText: '1. Ada batas waktu bembaca soal dan jawaban, jika sudah mengerti dapat
-      langsung menekan OK
-
-      2. Pilihan jawaban akan keluar, gerakkan karakter ke pilihan yang diinginkan'
+    ruleText: "1. <indent=5%> Ada batas waktu bembaca soal dan jawaban, jika sudah
+      mengerti dapat langsung menekan OK</indent>\r\n\r\n2. <indent=5%> Pilihan jawaban
+      akan keluar, gerakkan karakter ke pilihan yang diinginkan</indent>"
     imgRule:
     - {fileID: 21300000, guid: 07220492b7d743148b451c165c36ddfc, type: 3}
     - {fileID: 21300000, guid: 8db87e407f4e7cb4298fabc98e463ca5, type: 3}
-  ruleNavButton:
-  - {fileID: 59379317}
-  - {fileID: 1668189406}
   volSlider: {fileID: 255865864}
 --- !u!4 &106227862
 Transform:
@@ -3142,8 +3137,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 106227861}
-        m_MethodName: goToLvl
-        m_Mode: 3
+        m_MethodName: goToDialogue
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3423,8 +3418,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.7, y: 143.3}
-  m_SizeDelta: {x: 1161.4, y: 1692}
+  m_AnchoredPosition: {x: -1.7, y: 47.5}
+  m_SizeDelta: {x: 1290.5, y: 1883.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1579509863
 MonoBehaviour:
@@ -3472,14 +3467,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 100
+  m_fontSize: 90
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 100
+  m_fontSizeMax: 90
   m_fontStyle: 0
-  m_textAlignment: 513
+  m_textAlignment: 520
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -4400,8 +4395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.7, y: 494.64996}
-  m_SizeDelta: {x: 1161.4, y: 989.3}
+  m_AnchoredPosition: {x: 0.9, y: 491.96}
+  m_SizeDelta: {x: 1274.1, y: 1083.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1790440367
 MonoBehaviour:
@@ -4449,14 +4444,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 100
+  m_fontSize: 90
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 100
+  m_fontSizeMax: 90
   m_fontStyle: 0
-  m_textAlignment: 513
+  m_textAlignment: 520
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
