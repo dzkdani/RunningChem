@@ -12,7 +12,6 @@ public class soalTimer : MonoBehaviour
 
     void OnEnable() 
     {
-        //maxTime  = soalManager.Instance.getPopUpDuration();
         currentTime = maxTime;
         timerImg.fillAmount = maxTime / maxTime;
     }

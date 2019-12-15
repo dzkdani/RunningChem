@@ -67,10 +67,10 @@ public class ObjectSpawner : MonoBehaviour
     {
         if (soalManager.Instance.isPopUpSoal())
         {
+            StopAllCoroutines();
+            conditionalTimer("blue");
             if (!soalCheck)
             {
-                StopAllCoroutines();
-                conditionalTimer("blue");
                 soalCheck = true;
             }
         } 

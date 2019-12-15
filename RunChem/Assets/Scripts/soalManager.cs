@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class soalManager : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class soalManager : MonoBehaviour
         soalLeft = totalSoal;
         panelSoal = GameObject.FindGameObjectWithTag("Soal");
         panelSoal.SetActive(false);
+        panelSelesaiLevel.SetActive(false);
         soalTextUI.SetText((totalSoal-soalLeft)+"/"+totalSoal);
         coinCounterUI.SetText("0");
     }
@@ -55,10 +57,11 @@ public class soalManager : MonoBehaviour
         } else { isSoal = false; }
     }
 
+    #region POP UP SOAL
     void SoalPanel()
     {
         panelSoal.SetActive(true);
-        int rand = Random.Range(0, soalList.Count);
+        int rand = UnityEngine.Random.Range(0, soalList.Count);
         soalText.SetText(soalList[rand].soalText);
         for (int i = 0; i < opsiText.Count; i++)
         {
@@ -75,7 +78,6 @@ public class soalManager : MonoBehaviour
     }
 
     [SerializeField] float popUpDuration;
-    public float getPopUpDuration() { return popUpDuration; }
     public float cekJawabanDuration;
 
     public void okLanjut()
@@ -87,9 +89,11 @@ public class soalManager : MonoBehaviour
 
     IEnumerator SoalPopUpTimer()
     {
-        yield return new WaitForSeconds(popUpDuration);
-    }
+        yield return new WaitForSecondsRealtime(30.0f);
+    } 
+    #endregion
 
+    #region  CEK JAWABAN
     public Image emojiImg;
     GameObject panelEmoji;
     [SerializeField] List<Sprite> emojiList = new List<Sprite>();
@@ -105,6 +109,7 @@ public class soalManager : MonoBehaviour
             emojiImg.sprite = emojiList[0];
             audioManager.Instance.PlayAudio("jawabanBnr");
             skorTextUI.SetText("<b>"+currentSkor.ToString()+"</b>");
+            soalBenar+=1;
 
         } else { 
             emojiImg.sprite = emojiList[1];
@@ -131,7 +136,20 @@ public class soalManager : MonoBehaviour
             isSoal = false;
             StopAllCoroutines();
             ObjectSpawner.Instance.StopAllCoroutines();
-            Debug.Log("Gim Selesai");
+            EndLevel();
         }
+    }
+    #endregion
+
+    public GameObject panelSelesaiLevel;
+    public TextMeshProUGUI TextSkorAkhir, textSoalBenar, textCoinTotal;
+    int soalBenar = 0;
+    private void EndLevel()
+    {
+        TextSkorAkhir.text = skorTextUI.text;
+        textCoinTotal.text = coinCounterUI.text;
+        textSoalBenar.text = soalBenar.ToString();
+
+        panelSelesaiLevel.SetActive(true);
     }
 }
