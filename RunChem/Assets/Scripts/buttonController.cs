@@ -58,8 +58,7 @@ public class buttonController : MonoBehaviour
     {
         playAudio();
         StartCoroutine(delayButton());
-        SceneManager.LoadScene("Komik");
-        
+        sceneTransitionController.Instance.toNextLevel();
     }
 
     public void goToLvl(int lvl)
