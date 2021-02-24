@@ -1,6 +1,6 @@
-# RunningChem
+# Educational Chemistry game about Acid-Base reaction
 
-## Category : Game
+## Category : Game / Published
+## Genre    : Endless Run
 ## Platform : Android
 
-> endless 'n' quiz game of chemistry
